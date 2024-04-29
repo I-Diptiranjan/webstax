@@ -3,6 +3,7 @@ import { logo, lock, close } from "../../assets/HeroPageAssets";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
 
         {/* <h1 className="font-bold text-2xl text-[#FF204E]">Webstax</h1> */}
 
-        <div className="hidden md:flex items-center dark:text-white ">
+        <div className="hidden lg:flex items-center dark:text-white ">
           <ul className="flex gap-4">
             <li className="hover:text-[#FF204E]">Home</li>
             <li className="hover:text-[#FF204E]">About</li>
@@ -27,7 +28,8 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
+          <SearchBar activeVal={false} />
           <Link to={"/login"}>
             <button className="flex justify-between items-center  bg-transparent  px-6 gap-2 dark:text-white border border-sky-50 mt-3">
               <img src={lock} />
@@ -41,7 +43,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="md:hidden mr-6 dark:text-white" onClick={handleClick}>
+        <div className="lg:hidden mr-10 dark:text-white" onClick={handleClick}>
           {toggle ? <ImCross size={25} /> : <GiHamburgerMenu size={30} />}
         </div>
       </div>
@@ -49,7 +51,7 @@ const Navbar = () => {
       <div
         className={
           toggle
-            ? "absolute z-10 p-4  bg-white w-full px-8 md:hidden border-b dark:bg-red-500 dark:text-white font-extrabold"
+            ? "absolute z-10 p-4  bg-white w-full px-8 md:hidden border-b dark:bg-red-500 dark:text-white font-extrabold "
             : "hidden"
         }>
         <ul>
@@ -61,6 +63,7 @@ const Navbar = () => {
           </li>
           <li className="p-4 hover:bg-gray-100 dark:hover:bg-black">Pricing</li>
           <div className="flex flex-col my-4 gap-4">
+            <SearchBar activeVal={true} />
             <button className="border-b border-[20B486] flex justify-center items-center  bg-transparent  px-6 gap-2 py-4 text-xl">
               <img src={lock} />
               Login

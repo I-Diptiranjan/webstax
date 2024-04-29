@@ -42,7 +42,7 @@ function App() {
   }, [theme]);
 
   return (
-    <div className={`ml-4 mr-4 scroll-smooth dark:bg-black `}>
+    <div className={` scroll-smooth dark:bg-black `}>
       <Router>
         <Navbar />
         <Routes>

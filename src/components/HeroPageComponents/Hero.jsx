@@ -1,51 +1,102 @@
+"use client";
 import React from "react";
-import { heroImg } from "../../assets/HeroPageAssets";
-import { AiOutlineSearch } from "react-icons/ai";
+import { HeroParallax } from "../Animations/HeroParallax";
 
-const Hero = () => {
-  return (
-    <>
-      <div className="w-full bg-white py-14 dark:bg-black dark:text-white">
-        <div className="md:max-w-[1480px] m-auto grid md:grid-cols-2 max-w-[600px]  px-4 md:px-0">
-          <div className="flex flex-col justify-start gap-4">
-            <p className="py-2 text-2xl text-[#FF204E] font-medium dark:text-white">
-              START <span className="dark:text-[#FF204E]">TO SUCCESS</span>
-            </p>
-            <h1 className="md:leading-[72px] py-2 md:text-6xl text-5xl font-semibold">
-              Access To <span className="text-[#FF204E]">5000+</span> Courses
-              from <span className="text-[#ff204e]">300</span> Instructors &
-              Institutions
-            </h1>
-            <p className="py-2 text-lg text-gray-600 dark:text-white">
-              Various versions have evolved over the years, sometimes by
-              accident.
-            </p>
+export default function Hero() {
+  return <HeroParallax products={products} />;
+}
+export const products = [
+  {
+    title: "Moonbeam",
+    link: "https://gomoonbeam.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+  },
+  {
+    title: "Cursor",
+    link: "https://cursor.so",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+  },
+  {
+    title: "Rogue",
+    link: "https://userogue.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+  },
 
-            <form className="bg-white border max-w-[500px] p-4 input-box-shadow rounded-md flex justify-between">
-              <input
-                className="bg-white dark:text-black"
-                type="text"
-                placeholder="What do want to learn?"
-              />
-              <button>
-                <AiOutlineSearch
-                  size={20}
-                  className="icon"
-                  style={{ color: "#000" }}
-                />
-              </button>
-            </form>
-          </div>
+  {
+    title: "Editorially",
+    link: "https://editorially.org",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+  },
+  {
+    title: "Editrix AI",
+    link: "https://editrix.ai",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+  },
+  {
+    title: "Pixel Perfect",
+    link: "https://app.pixelperfect.quest",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+  },
 
-          <img src={heroImg} className="md:order-last  order-first" />
-          {/* <Lottie
-          animationData={heroPage}
-          className="md:order-last  order-first"
-        /> */}
-        </div>
-      </div>
-    </>
-  );
-};
+  {
+    title: "Algochurn",
+    link: "https://algochurn.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+  },
+  {
+    title: "Aceternity UI",
+    link: "https://ui.aceternity.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+  },
+  {
+    title: "Tailwind Master Kit",
+    link: "https://tailwindmasterkit.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+  },
+  {
+    title: "SmartBridge",
+    link: "https://smartbridgetech.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+  },
+  {
+    title: "Renderwork Studio",
+    link: "https://renderwork.studio",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+  },
 
-export default Hero;
+  {
+    title: "Creme Digital",
+    link: "https://cremedigital.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+  },
+  {
+    title: "Golden Bells Academy",
+    link: "https://goldenbellsacademy.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+  },
+  {
+    title: "Invoker Labs",
+    link: "https://invoker.lol",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+  },
+  {
+    title: "E Free Invoice",
+    link: "https://efreeinvoice.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+  },
+];
