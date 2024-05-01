@@ -10,7 +10,8 @@ import {
   Hero,
   Navbar,
 } from "../../components/HeroPageComponents";
-import "./home.css";
+import "./home.scss";
+import PromotionDetails from "../../components/HeroPageComponents/PromotionDetails";
 
 const HeroPage = () => {
   return (
@@ -19,9 +20,10 @@ const HeroPage = () => {
       <Companies />
       <Courses />
       <Achievement />
+
+      <PromotionDetails />
       <Categories />
       <Feedback />
-      <CTA />
     </>
   );
 };

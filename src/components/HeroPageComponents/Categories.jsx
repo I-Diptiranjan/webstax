@@ -9,10 +9,11 @@ import { AiOutlineCamera } from "react-icons/ai";
 import { BiData } from "react-icons/bi";
 import { MdAttachMoney } from "react-icons/md";
 import { FaUniversity } from "react-icons/fa";
+import { WobbleCard } from "../Animations/WobbleCard";
 
 const Categories = () => {
   return (
-    <div className="w-full bg-[#f7d7d7b2] py-24 dark:bg-[#FF204E]">
+    <WobbleCard containerClassName={"bg-red-700 "}>
       <div className="md:max-w-[1480px] m-auto  max-w-[600px]  px-4 md:px-0 ">
         <h1 className="md:leading-[72px] text-3xl font-bold ml-4 dark:text-black">
           Most{" "}
@@ -24,8 +25,8 @@ const Categories = () => {
           Various versions have evolved over the years, sometimes by accident.
         </p>
 
-        <div className="grid lg:grid-cols-4 grid-cols-2 py-12 md:gap-4 gap-1 m-4">
-          <CategoryCard icons={<BsVectorPen size={30} />} title={"Design"} />
+        <div className="grid lg:grid-cols-4 grid-cols-2 py-12 md:gap-4 gap-2 m-4">
+          <CategoryCard icons={<BsVectorPen size={0} />} title={"Design"} />
           <CategoryCard icons={<TiHtml5 size={30} />} title={"Development"} />
           <CategoryCard
             icons={<TbMicrophone2 size={30} />}
@@ -50,7 +51,7 @@ const Categories = () => {
           <CategoryCard icons={<FaUniversity size={30} />} title={"Teaching"} />
         </div>
       </div>
-    </div>
+    </WobbleCard>
   );
 };
 

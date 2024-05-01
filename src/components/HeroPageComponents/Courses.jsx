@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import Slider from "react-slick";
 import { courses } from "../../constants/Courses";
+import { WobbleCard } from "../Animations/WobbleCard";
 
 const Courses = () => {
   var settings = {
@@ -45,7 +46,7 @@ const Courses = () => {
   };
 
   return (
-    <div className="w-full bg-[#f7d7d7b2] py-32 dark:bg-[#FF204E]">
+    <WobbleCard containerClassName={"bg-red-700"}>
       <div className="md:max-w-[1480px] m-auto max-w-[600px]  px-4 md:px-0">
         <div className="py-4 ml-4">
           <h1 className="py-3 text-3xl font-bold ">
@@ -65,7 +66,7 @@ const Courses = () => {
           ))}
         </Slider>
       </div>
-    </div>
+    </WobbleCard>
   );
 };
 

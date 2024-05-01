@@ -16,9 +16,11 @@ const SearchBar = ({ activeVal }) => {
           name=""
           id=""
           ref={inputRef}
-          className={`p-2 border bg-red-300 dark:bg-red-500 top-0 right-0 
+          className={`p-2 border bg-white border-bg-red-500 top-0 right-0 
           transition ease delay-150 duration-300
-          rounded-md ${active ? "w-60" : "w-11"} outline-none bolder-black`}
+          rounded-md ${
+            active ? "w-40 lg:w-50" : "w-11"
+          } outline-none bolder-black`}
         />
         <button
           type="submit"

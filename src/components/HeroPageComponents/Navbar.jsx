@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import { BsSearch } from "react-icons/bs";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -63,7 +64,25 @@ const Navbar = () => {
           </li>
           <li className="p-4 hover:bg-gray-100 dark:hover:bg-black">Pricing</li>
           <div className="flex flex-col my-4 gap-4">
-            <SearchBar activeVal={true} />
+            <div className="flex justify-center items-center ">
+              <div className="flex justify-center items-center relative">
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  className={`p-2 border bg-white border-bg-red-500 top-0 right-0 
+          transition ease delay-150 duration-300
+          rounded-md  "w-40 "
+          } outline-none bolder-black`}
+                />
+                <button
+                  type="submit"
+                  className="absolute top bg-transparent p-3 cursor-pointer right-[2px] border-none"
+                  onClick={() => handleClick()}>
+                  <BsSearch />
+                </button>
+              </div>
+            </div>
             <button className="border-b border-[20B486] flex justify-center items-center  bg-transparent  px-6 gap-2 py-4 text-xl">
               <img src={lock} />
               Login

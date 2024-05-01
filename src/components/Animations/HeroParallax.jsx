@@ -10,6 +10,7 @@ import {
 import { Image } from "@chakra-ui/react";
 
 import { AiOutlineSearch } from "react-icons/ai";
+import { HeroHeading } from "./HeroHeading";
 
 export const HeroParallax = ({ products }) => {
   const firstRow = products.slice(0, 5);
@@ -47,10 +48,11 @@ export const HeroParallax = ({ products }) => {
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   );
+
   return (
     <div
       ref={ref}
-      className="h-[300vh] overflow-hidden  antialiased relative flex flex-col self-auto  [transform-style:preserve-3d]">
+      className="h-[300vh] overflow-hidden  antialiased relative flex flex-col self-auto  [transform-style:preserve-3d] mb-20 ">
       <Header />
       <motion.div
         style={{
@@ -60,7 +62,7 @@ export const HeroParallax = ({ products }) => {
           opacity,
         }}
         className="">
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 ">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -69,20 +71,11 @@ export const HeroParallax = ({ products }) => {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row  space-x-20 ">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
               translate={translateXReverse}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
               key={product.title}
             />
           ))}
@@ -93,35 +86,48 @@ export const HeroParallax = ({ products }) => {
 };
 
 export const Header = () => {
+  const words = [
+    {
+      text: "START",
+    },
+    {
+      text: "TO",
+    },
+
+    {
+      text: "SUCCESS.",
+      className: "text-red-600 dark:text-red-600",
+    },
+  ];
+
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-20  px-4 w-full  left-0 top-0">
-      <h1 className="text-6xl md:text-7xl font-bold dark:text-white md:mt-10">
-        START{" "}
-        <span className="text-[#FF204E]">
-          {" "}
-          <br />
-          TO SUCCESS
-        </span>
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-4 dark:text-neutral-200">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
-      </p>
-      <form className="bg-white max-w-[500px] h-14 rounded-xl mt-12 md:mt-12 input-box-shadow  flex justify-between  border-solid border-4 border-red-400 z-10 relative ">
-        <input
-          className="bg-white dark:text-black rounded-md border-none outline-none p-2 text-xl w-[450px] "
-          type="text"
-          placeholder="What do want to learn?"
-        />
-        <button className="bg-red-400 hover:bg-red-500 rounded-md w-20 flex justify-center items-center">
-          <AiOutlineSearch
-            size={20}
-            className="icon"
-            style={{ color: "#000" }}
+    <div className=" z-10 max-w-3xl">
+      <div className="max-w-7xl relative mx-auto py-20 md:py-20  px-4 w-full  left-0 top-0 ">
+        <HeroHeading words={words} />
+        <p className="max-w-2xl text-base md:text-xl mt-4 dark:text-neutral-200">
+          We build beautiful products with the latest technologies and
+          frameworks. We are a team of passionate developers and designers that
+          love to build amazing products.
+        </p>
+        <form className="bg-white max-w-[500px] h-14 rounded-xl mt-12 md:mt-12 input-box-shadow  flex justify-between  border-solid border-4 border-red-500 z-10 relative ">
+          <input
+            className="bg-white dark:text-black rounded-md border-none outline-none p-2 text-xl w-[450px] "
+            type="text"
+            placeholder="What do want to learn?"
           />
-        </button>
-      </form>
+          <button className="bg-red-500 hover:bg-red-600 rounded-md w-20 flex justify-center items-center">
+            <AiOutlineSearch
+              size={20}
+              className="icon"
+              style={{ color: "#000" }}
+            />
+          </button>
+        </form>
+      </div>
+      {/* <Lottie
+        animationData={heropage}
+        className="md:order-last  order-last  h-[60vh]  bg-transparent"
+      /> */}
     </div>
   );
 };
